@@ -10,6 +10,14 @@ import io.micronaut.http.annotation.PathVariable
 import io.micronaut.http.annotation.Post
 import io.micronaut.http.annotation.QueryValue
 
+@Controller("/ping")
+class PingEntrypoint() {
+    @Get
+    fun ping(): HttpResponse<String> {
+        return HttpResponse.ok("pong")
+    }
+}
+
 @Controller("/users")
 class UserEntrypoint(
     private val userService: UserService
